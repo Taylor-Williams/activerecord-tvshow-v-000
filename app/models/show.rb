@@ -7,4 +7,8 @@ class Show < ActiveRecord::Base
   def self.most_popular_show
     find_by(rating: self.highest_rating)
   end
+
+  def self.lowest_rating
+    minimum(:rating)
+  end
 end
